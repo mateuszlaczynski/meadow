@@ -1,0 +1,81 @@
+.add-to-cart-panel {
+    padding: 15px;
+    width: 100%;
+    min-width: 320px;
+    text-align: center;
+    height: 100%;
+}
+
+.datail-thumbnail-container {
+    max-height: 700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+.select-product {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    width:65px;
+    padding: 10px;
+    text-align: center;
+}
+.select-product:hover {
+    background-color: rgb(247, 247, 247);
+    cursor: pointer;
+}
+
+.select-product-option {
+    background-color: white;
+}
+
+/* Detail amount input form */
+.amount-input {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+}
+input.amount-input:focus {
+    outline: none;
+}
+
+/* Cards on the bottom of ProductDetail */
+
+.recommended-card:hover {
+    cursor: pointer;
+    border: 3px solid black
+}
+.pointer-hover {
+    
+}
+.pointer-hover:hover {
+    cursor: pointer;
+}
+
+.carousel .thumb img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.carousel .slide img {
+    max-height: 850px;
+    width: auto;
+}
+
+.membership-panel {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+}

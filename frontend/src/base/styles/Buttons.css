@@ -1,0 +1,132 @@
+.add-to-cart-button {
+    width: 300px;
+    margin-top: 10px;
+    background-color: black;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 5px;
+    color:white;
+    padding: 30px;
+    font-size: 25px;
+}
+.add-to-cart-button:hover {
+    background-color: rgb(65, 65, 65);
+}
+
+.plus-minus-buttons {
+    width: 50px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    padding:15px;
+    font-size: 20px;
+    text-align: center;
+}
+.plus-minus-buttons:hover {
+    background-color: rgb(65, 65, 65);
+}
+.plus-minus-buttons:disabled {
+    background-color: rgb(65, 65, 65);
+}
+
+.check-sizes-link-button {
+    color:darkred;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px solid darkred;
+    margin-bottom: 10px;
+}
+.check-sizes-link-button:hover {
+    border-bottom: 1px solid rgb(230, 0, 0); 
+    color:rgb(230, 0, 0);
+}
+
+.checkout-button {
+    background-color: rgb(210, 0, 0);
+    width: 100%;
+    min-width: 200px;
+    height: 50px;
+    color:white;
+    font-size:22px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    margin:3px;
+}
+.checkout-button:hover {
+    background-color: rgb(190, 0, 0); 
+}
+.checkout-button:disabled {
+    background-color: lightgray;
+}
+
+.green-button {
+    background-color: darkgreen;
+    width: 100%;
+    min-width: 200px;
+    height: 50px;
+    color:white;
+    font-size:22px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    margin:3px;
+}
+.green-button:hover {
+    background-color: green; 
+}
+.green-button:disabled {
+    background-color: lightgray;
+}
+
+.gray-button {
+    background-color: gray;
+    width: 100%;
+    min-width: 200px;
+    height: 50px;
+    color:white;
+    font-size:22px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    margin:3px;
+}
+.gray-button:hover {
+    background-color: darkgray; 
+}
+.gray-button:disabled {
+    background-color: lightgray;
+}
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    color: lightgray;
+}
+.delete-button:hover {
+    color: rgb(189, 189, 189);
+}
+.cart-plus-minus-buttons {
+    background-color: transparent;
+    border-color: transparent;
+    color:lightgray;
+}
+.cart-plus-minus-buttons:hover {
+    color: rgb(189, 189, 189);
+}
+
+.payment-button {
+    height: 100px;
+    width: 100px;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.payment-button:hover {
+    background-color: lightgray;
+    border-color: white;
+}
+
+.payment-button:disabled {
+    background-color: gray;
+    border-color: white;
+    color:rgb(49, 49, 49);
+}
