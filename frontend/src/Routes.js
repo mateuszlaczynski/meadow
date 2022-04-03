@@ -9,7 +9,6 @@ import ProductDetail from './core/ProductDetail';
 import Cart from './core/Cart';
 import Contact from './core/Contact';
 import Products from './core/Products';
-import Dimensions from './core/Dimensions';
 import FAQ from './user/FAQ';
 import UserDashboard from './user/UserDashboard';
 import Newsletter from './user/Newsletter';
@@ -24,7 +23,6 @@ const Routes = () => {
           <Route exact path="/oferty-na-zamowienie" element={<OnDemand/>}/>
           <Route exact path="/koszyk" element={<Cart/>}/>
           <Route exact path="/detail/:slug" element={<ProductDetail/>}/>
-          <Route exact path="/wymiary" element={<Dimensions/>}/>
           <Route exact path="/o-nas" element={<About/>}/>
           <Route exact path="/kontakt" element={<Contact/>}/>
           <Route exact path="/faq" element={<FAQ/>}/>

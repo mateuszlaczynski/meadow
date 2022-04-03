@@ -24,6 +24,10 @@ class Order(models.Model):
     accepted = models.BooleanField(default=False)
     shipped = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name = 'Zamówienie'
+        verbose_name_plural = 'Zamówienia'
+
     def __str__(self):
         return f"{self.email} : {self.transaction_id} | Data: {self.created_at}"
     

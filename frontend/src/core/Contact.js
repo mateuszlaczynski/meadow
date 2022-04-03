@@ -120,11 +120,9 @@ const Contact = () => {
                 }               
             </div>
             <div className='col-12 col-xl-4 my-5' style={{textAlign:'center'}}>
-              <h2>tel: +48 123 456 789</h2>
-              <h2>email: email1@email.com</h2>
+              <h2>tel: +48 730 786 586</h2>
+              <h3>email: mateusz.laczynski20@gmail.com</h3>
               <br/>
-              <h2>tel: +48 987 456 321</h2>
-              <h2>email: email2@email.com</h2>
             </div>
         </div>
     </Base>

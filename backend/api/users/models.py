@@ -37,11 +37,19 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+    class Meta:
+        verbose_name = 'Użytkownik'
+        verbose_name_plural = 'Użytkownicy'
+
     def __str__(self):
         return f'{self.email} | newsletter: {self.newsletter}'
 
 class Newsletter(models.Model):
     email = models.EmailField(max_length=255, unique=True)
+
+    class Meta:
+        verbose_name = 'Newsletter'
+        verbose_name_plural = 'Newslettery'
 
     def __str__(self):
         return self.email
@@ -49,6 +57,10 @@ class Newsletter(models.Model):
 class FAQ(models.Model):
     question = models.CharField(max_length=200)
     answer = models.TextField(max_length=1200)
+
+    class Meta:
+        verbose_name = 'FAQ'
+        verbose_name_plural = 'FAQ'
 
     def __str__(self):
         return self.question

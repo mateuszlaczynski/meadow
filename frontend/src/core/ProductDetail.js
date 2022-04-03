@@ -81,7 +81,7 @@ const ProductDetail = () => {
                 <label style={{marginRight: "10px", fontSize:22, color:"black"}}>
                     Wybierz rozmiar:
                 </label>
-                <select className='select-product' onChange={handleChange}>
+                <select style={{width:150}} className='select-product' onChange={handleChange}>
                     {array.map((object) => {
                     return (
                         <option className='select-product-option' key={object.size} 
@@ -90,10 +90,6 @@ const ProductDetail = () => {
                     })}
                 </select>
             </form>
-            <button onClick={() => navigate('/wymiary')}
-             className='check-sizes-link-button'>
-                 Sprawdź wymiary
-            </button>
             <br/>
         </>)
     };
@@ -124,12 +120,12 @@ const ProductDetail = () => {
         return (
             <div className='add-to-cart-panel'>
                 {product.discount_price ? <>
-                    <h1 style={{fontStyle:"italic"}}>{product.name}: <i style={{textDecoration:"line-through"}}>
+                    <h1 style={{fontStyle:"italic"}}>{product.name}: <br/><i style={{textDecoration:"line-through"}}>
                         {product.price} zł</i> <i style={{color:'darkRed'}}>{product.discount_price} zł <br/>
                         - {Math.round(((product.price - product.discount_price)/product.price)*100)}% OFF</i>
         </h1>
                 </> : <>
-                    <h1 style={{fontStyle:"italic"}}>{product.name}: {product.price} zł</h1>
+                    <h1 style={{fontStyle:"italic"}}>{product.name}: <br/>{product.price} zł</h1>
                 </>}
 
                 {outOfStock ? <>
@@ -185,7 +181,7 @@ const ProductDetail = () => {
                 stopOnHover={false}
                 showArrows={false}
                 showIndicators={false}
-                interval={4000}
+                interval={8000}
                 showStatus={false}
             >
               {images.map(image => <div key={image.id}>

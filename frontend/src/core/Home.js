@@ -75,7 +75,7 @@ const Home = () => {
   return <Base title="Meadow">
         {loading && <div className='loading'></div>}
         {!loading && <>
-          {video()}
+          {/*video()*/}
           {carousel(carouselImages)}
           <div className='container my-5'>
             {seeMore()}

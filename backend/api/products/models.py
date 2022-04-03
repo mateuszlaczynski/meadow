@@ -8,7 +8,8 @@ class Category(models.Model):
     active = models.BooleanField(default=True)
     
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name = "Kategoria"
+        verbose_name_plural = "Kategorie"
 
     def __str__(self):
         return self.name
@@ -36,6 +37,10 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "Produkt"
+        verbose_name_plural = "Produkty"
+
     def __str__(self):
         return self.name
 
@@ -48,13 +53,21 @@ class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='detail/')
 
+    class Meta:
+        verbose_name = "Zdjęcie Produktu"
+        verbose_name_plural = "Zdjęcia Produktów"
+
     def __str__(self):
         return self.reference_name
 
 class ProductStock(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    size = models.CharField(max_length=6)
+    size = models.CharField(max_length=12)
     quantity = models.IntegerField(default=0)
+
+    class Meta:
+        verbose_name = "Wyposarzenie w Produkt"
+        verbose_name_plural = "Wyposarzenie w Produkty"
 
     def __str__(self):
         return f'{self.quantity} x {self.product.name}: {self.size}'
@@ -80,6 +93,10 @@ class CartItem(models.Model):
     thumbnail = models.ImageField(blank=True, null=True)
     slug = models.SlugField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Przedmiot w Koszyku"
+        verbose_name_plural = "Przedmioty w Koszyku"
+
     def __str__(self):
         return f'{self.user.email}, {self.name}, {self.product.size}: {self.amount}'
     
@@ -98,6 +115,10 @@ class Code(models.Model):
     discount_factor = models.IntegerField(default=0)
     marketers_share = models.IntegerField(default=0)
 
+    class Meta:
+        verbose_name = "Kod"
+        verbose_name_plural = "Kody"
+
     def __str__(self):
         return f'{self.code}: {self.owner}'
     
@@ -111,7 +132,8 @@ class CarouselImages(models.Model):
     image = models.ImageField(upload_to='carousel/')
 
     class Meta:
-        verbose_name_plural = "Carousel Images"
+        verbose_name = "Zdjęcie w Karuzeli"
+        verbose_name_plural = "Zdjęcia w Karuzeli"
 
     def __str__(self):
         return self.reference_name

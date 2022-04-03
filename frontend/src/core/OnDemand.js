@@ -1,5 +1,7 @@
 import React from 'react'
 import Base from '../base/Base'
+import onDemand1 from '../base/images/onDemand1.png'
+import onDemand2 from '../base/images/onDemand2.png'
 
 const OnDemand = () => {
   return (
@@ -7,15 +9,14 @@ const OnDemand = () => {
     <div style={{marginTop:"10px"}} className='row'>
         <div className='col-12 col-lg-5'>
             <img className='img-fluid' style={{maxHeight:600}}
-            alt="Placeholder" src="https://via.placeholder.com/500"></img>
+            alt="Placeholder" src={onDemand1}></img>
         </div>
         <div className='col-12 col-lg-7 my-auto'>
            <p className='mx-4' style={{fontSize:28, textAlign:'justify'}}>
-           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-           Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-           natoque penatibus et magnis dis parturient montes, nascetur 
-           ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-           Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate 
+            Stroje koszykarskie: komplety koszykarskie i koszulki rozgrzewkowe
+            Dzianina polyester 100%, gramatura 200g/m2, sublimacja najwyższej jakości.
+            Cena: od 125,00 zł za komplet,
+            od 65,00 zł za koszulkę. W sprawie zamówienia prosimy o kontakt telefonicznny lub mailem.
            </p>
         </div>
     </div>
@@ -23,16 +24,14 @@ const OnDemand = () => {
   <div style={{marginTop:"50px"}} className='row'>
         <div className='col-12 col-lg-7 my-auto'>
            <p className='mx-4' style={{fontSize:28, textAlign:'justify'}}>
-           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-           Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-           natoque penatibus et magnis dis parturient montes, nascetur 
-           ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-           Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate 
+            Stroje koszykarskie: komplety koszykarskie i koszulki rozgrzewkowe
+            Dzianina polyester 100%, gramatura 200g/m2, sublimacja najwyższej jakości.
+            Cena: od 125,00 zł za komplet. W sprawie zamówienia prosimy o kontakt telefonicznny lub mailem.
            </p>
         </div>
         <div className='col-12 col-lg-5'>
             <img className='img-fluid' style={{maxHeight:600}}
-            alt="Placeholder" src="https://via.placeholder.com/500"></img>
+            alt="Placeholder" src={onDemand2}></img>
         </div>
     </div>
     </Base>
