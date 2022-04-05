@@ -169,6 +169,7 @@ const Checkout = ({cart, totalPrice, code}) => {
                         type="text"
                         value={phone}
                         onChange={handleChange("phone")}
+                        placeholder="#########"
                 />
             </div>
             <div className='col-12 col-lg-6'>            
@@ -218,7 +219,7 @@ const Checkout = ({cart, totalPrice, code}) => {
                 <div>
                     <input type="radio" onChange={handleRadio}
                         name="shipment" id="inPost" value={0}/>
-                    <label style={{marginLeft:5}}>inPost</label>
+                    <label style={{marginLeft:5}}>Paczkomat inPost</label>
                         
                     {shipmentMethod == "inPost" && <div style={{marginLeft:10}}>
                         <label>*Podaj numer paczkoamtu:</label>
@@ -240,7 +241,7 @@ const Checkout = ({cart, totalPrice, code}) => {
                 <div>
                     <input type="radio" onChange={handleRadio}
                     name="shipment" id="inPost" value={12.99}/>
-                    <label style={{marginLeft:5}}>inPost - 12.99 zł</label>
+                    <label style={{marginLeft:5}}>Paczkomat inPost - 12.99 zł</label>
                     
                     {shipmentMethod == "inPost" && <div style={{marginLeft:10}}>
                         <label>*Podaj numer paczkoamtu:</label>

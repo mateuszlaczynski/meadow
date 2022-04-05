@@ -1,22 +1,16 @@
-from ast import Or
-from asyncio.windows_events import NULL
-from cgitb import lookup
-from hashlib import new
-from itertools import product
 from rest_framework import viewsets
 from .models import Order
 from .serializers import OrderSerializer
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from .models import Order
 from api.products.models import Code
 from datetime import datetime
-from django.core.exceptions import ObjectDoesNotExist 
 import json
 from django.core.mail import send_mail
 from django.conf import settings
+from django.template import loader
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('created_at')
@@ -43,10 +37,12 @@ def generate_bank_transfer_order(request):
         except Code.DoesNotExist:
             code = None
 
+        shipment_method = f"{body.get('shipmentMethod')} {body.get('lockerId')}"
+
         new_order = Order(email=body.get("email"), message=body.get("message"),
             city=body.get("city"), adress=body.get("adress"), postal_code=body.get("postalCode"),
             phone=body.get("phone"), full_name=full_name, product_names=body.get("cart"),
-            shipment_fee=body.get("shipmentFee"), shipment_method=body.get("shipmentMethod"),
+            shipment_fee=body.get("shipmentFee"), shipment_method=shipment_method,
             transaction_id=transaction_id, total_price=body.get("price"), code=code)
         
         new_order.save()
@@ -61,6 +57,31 @@ def generate_bank_transfer_order(request):
             fail_silently=True,
         )
 
-        return JsonResponse({"id":new_order.transaction_id,
+        html_message = loader.render_to_string(
+            'order_mail.html',
+            {
+                'id': transaction_id,
+                'price': new_order.total_price,
+                'order': new_order.product_names,
+                'full_name': new_order.full_name,
+                'city': new_order.city,
+                'adress': new_order.adress,
+                'postal_code': new_order.postal_code,
+                'shipment_method': new_order.shipment_method
+            }
+        )
+
+        send_mail(
+            f"Dziękujemy za zamówienie: {new_order.transaction_id}",
+            '',
+            settings.EMAIL_HOST_USER,
+            [new_order.email],
+            fail_silently=True,
+            html_message=html_message
+        )
+
+        return JsonResponse({
+            "id":new_order.transaction_id,
             'price':new_order.total_price,
-            "shipment_fee": new_order.shipment_fee})
+            "shipment_fee": new_order.shipment_fee
+            })
